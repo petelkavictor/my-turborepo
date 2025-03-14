@@ -1,14 +1,21 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  env: {
+    SHOP_DOMAIN: process.env.SHOP_DOMAIN,
+  },
   async rewrites() {
     return [
       {
+        source: "/shop",
+        destination: `${process.env.SHOP_DOMAIN}/shop`, // Proxy to the Shop app
+      },
+      {
         source: "/shop/:path*",
-        destination: "https://my-turborepo-shop.vercel.app/shop/:path*", // Proxy to the Shop app
+        destination: `${process.env.SHOP_DOMAIN}/shop/:path*`, // Proxy to the Shop app
       },
     ];
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
