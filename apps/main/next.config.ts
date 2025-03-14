@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/shop/:path*",
-        destination: "http://localhost:3000/shop/:path*", // Proxy to the Shop app
+        destination: "https://my-turborepo-shop.vercel.app/shop/:path*", // Proxy to the Shop app
       },
     ];
   },
