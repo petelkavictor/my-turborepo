@@ -8,11 +8,11 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/shop",
-        destination: process.env.SHOP_DOMAIN ? `${process.env.SHOP_DOMAIN}/shop` : "/shop",
+        destination: process.env.SHOP_DOMAIN ? `${process.env.SHOP_DOMAIN}` : "/shop",
       },
       {
         source: "/shop/:path*",
-        destination: process.env.SHOP_DOMAIN ? `${process.env.SHOP_DOMAIN}/shop/:path*` : "/shop:path", // Proxy to the Shop app
+        destination: process.env.SHOP_DOMAIN ? `${process.env.SHOP_DOMAIN}/:path*` : "/shop:path", // Proxy to the Shop app
       },
     ];
   },
